@@ -647,7 +647,7 @@ const styles = {
   resultsSection: {
     display: 'grid',
     gap: '14px',
-    minHeight: '100%',
+    minHeight: '720px',
   },
   resultsSectionHeader: {
     display: 'flex',
@@ -708,11 +708,18 @@ const styles = {
     padding: '24px',
     color: '#607983',
     boxShadow: '0 10px 26px rgba(18,60,74,0.04)',
+
+    minHeight: '340px',   
+    display: 'flex',      
+    alignItems: 'center', 
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   cardGrid: {
     display: 'grid',
     gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
     gap: '16px',
+    minHeight: '340px',
   },
   resultCard: {
     borderRadius: '24px',

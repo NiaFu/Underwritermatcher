@@ -1,3 +1,7 @@
+/**
+ * This project is for non-commercial use only.
+ * Commercial use is strictly prohibited.
+ */
 import { useEffect, useMemo, useState } from 'react'
 
 export default function App() {

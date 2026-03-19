@@ -9,9 +9,10 @@ public class MatchResultDto {
     private String phone;
     private String web;
     private String address;
+    private String appetite;
 
     public MatchResultDto(Long underwriterId, String underwriterName, String contactPerson,
-                          String email, String phone, String web, String address) {
+                          String email, String phone, String web, String address, String appetite) {
         this.underwriterId = underwriterId;
         this.underwriterName = underwriterName;
         this.contactPerson = contactPerson;
@@ -19,6 +20,7 @@ public class MatchResultDto {
         this.phone = phone;
         this.web = web;
         this.address = address;
+        this.appetite = appetite;
     }
 
     public Long getUnderwriterId() {
@@ -47,5 +49,9 @@ public class MatchResultDto {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getAppetite() {
+        return appetite;
     }
 }

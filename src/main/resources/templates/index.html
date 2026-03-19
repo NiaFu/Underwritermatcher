@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Underwriter Matcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f7f7f7;
+        }
+
+        .card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        p {
+            color: #555;
+        }
+
+        label {
+            display: block;
+            margin: 16px 0 8px;
+            font-weight: bold;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            background: #222;
+            color: white;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Underwriter Matcher</h1>
+    <p>Select an industry and insurance type to find matching underwriters.</p>
+
+    <form action="/match" method="get">
+        <label for="industryId">Industry</label>
+        <select id="industryId" name="industryId" required>
+            <option value="">Select Industry</option>
+            <option th:each="industry : ${industries}"
+                    th:value="${industry.id}"
+                    th:text="${industry.industryName}">
+            </option>
+        </select>
+
+        <label for="insuranceId">Insurance</label>
+        <select id="insuranceId" name="insuranceId" required>
+            <option value="">Select Insurance</option>
+            <option th:each="insurance : ${insurances}"
+                    th:value="${insurance.id}"
+                    th:text="${insurance.insuranceName}">
+            </option>
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+</div>
+</body>
+</html>

@@ -9,6 +9,7 @@ import com.example.underwritermatcher.service.MatchService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.example.underwritermatcher.dto.MatchGroupResponseDto;
 
 import java.util.List;
 
@@ -49,11 +50,11 @@ public class ApiController {
     * Get matches by industry id and insurance id
     * @param industryId the industry id
     * @param insuranceId the insurance id
-    * @return a list of match results
+    * @return a match group response dto
     */
     @GetMapping("/api/match")
-    public List<MatchResultDto> getMatches(@RequestParam Long industryId,
-                                           @RequestParam Long insuranceId) {
-        return matchService.findMatches(industryId, insuranceId);
+    public MatchGroupResponseDto getMatches(@RequestParam Long industryId,
+                                            @RequestParam Long insuranceId) {
+        return matchService.findMatchesByAppetite(industryId, insuranceId);
     }
 }

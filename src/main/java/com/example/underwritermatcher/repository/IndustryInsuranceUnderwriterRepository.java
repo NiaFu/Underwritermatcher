@@ -15,4 +15,18 @@ public interface IndustryInsuranceUnderwriterRepository
     * @return a list of industry insurance underwriters
     */
     List<IndustryInsuranceUnderwriter> findByIndustry_IdAndInsurance_Id(Long industryId, Long insuranceId);
+
+    /*
+    * Find all industry insurance underwriters by industry id
+    * @param industryId the industry id
+    * @return a list of industry insurance underwriters
+    */
+    List<IndustryInsuranceUnderwriter> findByIndustry_Id(Long industryId);
+
+    /*
+    * Find all industry insurance underwriters by insurance id
+    * @param insuranceId the insurance id
+    * @return a list of industry insurance underwriters
+    */
+    List<IndustryInsuranceUnderwriter> findByInsurance_Id(Long insuranceId);
 }
